@@ -10,7 +10,7 @@
     (blur)="onTouch()"
     [class.readonly]="isReadOnly"
     (ngModelChange)="onInput()"
-    [disabled]="isDisabled || isReadOnly"
+    [disabled]="disabled || isReadOnly"
     type="text"
     [placeholder]="placeholder"
   />

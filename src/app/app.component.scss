@@ -1,4 +1,30 @@
-.select {
-  width: 300px;
+.container {
   padding: 50px;
+  display: flex;
+
+  .sidebar {
+    width: 200px;
+
+    ul li {
+      margin-bottom: 15px;
+
+
+      a {
+        text-decoration: none;
+        color: darkolivegreen;
+
+        &:is(:hover, .active) {
+          font-size: 18px;
+          font-family: 'LondonWeb-Bold', sans-serif;
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    margin-left: 20px;
+  }
 }
+
+

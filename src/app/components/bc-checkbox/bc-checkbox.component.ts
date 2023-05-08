@@ -13,14 +13,13 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
       provide: NG_VALUE_ACCESSOR,
       useExisting: BcCheckboxComponent,
       multi: true,
-    }
-  ]
+    },
+  ],
 })
 export class BcCheckboxComponent implements ControlValueAccessor {
-
   @Input() label = ' ';
   isChecked = false;
-  isDisabled = false;
+  disabled = false;
 
   onChange = (_: boolean) => {};
   onTouch = () => {};
@@ -34,7 +33,7 @@ export class BcCheckboxComponent implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+    this.disabled = isDisabled;
   }
 
   writeValue(checked: boolean): void {

@@ -1,30 +1,78 @@
 // https://codepen.io/miniven/pen/ZJydge
 
+:host {
+  width: 100%;
+}
+
 .select-box {
+  --bc-select-color: #000000;
+  --bc-select-border-color: var(--color-neutral-medium-1);
+  --bc-select-placeholder-color: var(--color-neutral-medium-1);
+
   position: relative;
   display: block;
   width: 100%;
   margin: 0 auto;
   font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
-  font-size: 18px;
-  color: #60666d;
+  font-size: 16px;
+  color: var(--bc-select-color);
   box-sizing: border-box;
+  height: 51px;
 
-  border: 1.5px solid #4D4D4D;
-  border-radius: 5px;
-  height: 54px;
+  &.is-disabled {
+    pointer-events: none;
+    --bc-select-color: var(--color-neutral-medium-2);
+    .select-box__current {
+      --bc-select-border-color: var(--color-neutral-medium-2);
+      .placeholder {
+        --bc-select-placeholder-color: var(--color-neutral-medium-2);
+      }
+    }
+  }
 
   &__current {
     position: relative;
-    //box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
     cursor: pointer;
     outline: none;
+    height: inherit;
+    border: 1.5px solid var(--bc-select-border-color);
+    border-radius: 12px;
+
+    &:hover {
+      --bc-select-border-color: var(--color-neutral-dark-3);
+    }
+
+    &.has-value {
+      --bc-select-border-color: var(--color-neutral-dark-3);
+
+      .placeholder {
+        --bc-select-placeholder-color: var(--color-neutral-dark-3);
+        top: 0;
+        padding: 0 5px;
+        font-size: 12px;
+      }
+    }
+
+    .placeholder {
+      font-family: var(--font-regular, 'Roboto', 'Segoe UI', BlinkMacSystemFont, system-ui, -apple-system);
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: var(--bc-select-placeholder-color);
+      background: white;
+      transition: all 0.2s ease;
+    }
 
     &:focus {
+      --bc-select-border-color: var(--color-secondary);
+
+      .placeholder {
+        --bc-select-placeholder-color: var(--color-secondary);
+      }
+
       & + .select-box__list {
         opacity: 1;
-
-        // We have to set "animation-name: none;" to make the list visible (read below how it works)
 
         animation-name: none;
 
@@ -36,6 +84,12 @@
       .select-box__icon {
         transform: translateY(-50%) rotate(180deg);
       }
+
+      .placeholder {
+        top: 0;
+        padding: 0 5px;
+        font-size: 12px;
+      }
     }
   }
 
@@ -44,8 +98,7 @@
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    width: 20px;
-    opacity: 0.3;
+    font-size: 12px;
     transition: 0.2s ease;
   }
 
@@ -67,7 +120,7 @@
     margin: 0;
     padding: 15px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 12px;
   }
 
   &__list {
@@ -77,19 +130,13 @@
     list-style: none;
     opacity: 0;
     margin-top: 3px;
-
-    // We need to use animation with delay.
-    // Otherwise the click event will not have time to run on label, because this element disapears immediately when .select-box__current element loses the focus.
-    // This delay will not be noticed because we set "opacity" to "0".
-    // We also use "animation-fill-mode: forwards" to make the list stay hidden.
-
+    z-index: 1;
     animation-name: HideList;
     animation-duration: 0.5s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: step-start;
-    //box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &__option {
@@ -100,7 +147,7 @@
     &:hover,
     &:focus {
       color: #212121;
-      background-color: #D9D9D9;
+      background-color: #d9d9d9;
     }
   }
 }

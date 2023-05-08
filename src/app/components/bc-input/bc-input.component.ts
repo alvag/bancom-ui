@@ -20,7 +20,7 @@ export class BcInputComponent implements ControlValueAccessor {
   @Input() placeholder = ' ';
   @Input() isReadOnly = false;
   value?: string | number;
-  isDisabled = false;
+  disabled = false;
   onChange = (_: any) => {};
   onTouch = () => {};
 
@@ -33,7 +33,7 @@ export class BcInputComponent implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+    this.disabled = isDisabled;
   }
 
   writeValue(value: string | number): void {
