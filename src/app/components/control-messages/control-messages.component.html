@@ -1,0 +1,7 @@
+<div class="control-messages" [ngClass]="{ 'has-error': isInvalid(control) }">
+  <ng-content></ng-content>
+
+  <ng-container *ngIf="showMessage">
+    <small *ngIf="message" class="form-control-feedback {{ messageClass }}">{{ message }}</small>
+  </ng-container>
+</div>

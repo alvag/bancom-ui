@@ -1,0 +1,34 @@
+.control-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control-feedback {
+  margin-top: 6px;
+  padding-left: 12px;
+  color: var(--color-error);
+  font-size: 12px;
+}
+
+:host ::ng-deep .has-error {
+  .bc-input-outlined {
+    --bc-input-border-color: var(--color-error);
+
+    &:hover > input:not(:focus):not(:disabled):not(:read-only):placeholder-shown {
+      --bc-input-border-color: var(--color-error);
+    }
+
+    > input:focus {
+      --bc-input-border-color: var(--color-error);
+
+      + .label {
+        --bc-input-label-color: var(--color-error);
+
+        &::before,
+        &::after {
+          --bc-input-label-border-top-color: var(--color-error);
+        }
+      }
+    }
+  }
+}

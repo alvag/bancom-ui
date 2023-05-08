@@ -1,0 +1,188 @@
+@import 'styles/breakpoints';
+
+:root {
+  --font-regular: 'LondonWeb-Regular', sans-serif;
+  --font-medium: 'LondonWeb-Medium', sans-serif;
+  --font-bold: 'LondonWeb-Bold', sans-serif;
+}
+
+@font-face {
+  font-family: 'LondonWeb-Bold';
+  src: url('LondonWeb-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'LondonWeb-Medium';
+  src: url('LondonWeb-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'LondonWeb-Regular';
+  src: url('LondonWeb-Regular.ttf');
+}
+
+.font-bold {
+  font-family: 'LondonWeb-Bold', sans-serif;
+}
+
+.font-medium {
+  font-family: 'LondonWeb-Medium', sans-serif;
+}
+
+.font-regular {
+  font-family: 'LondonWeb-Regular', sans-serif;
+}
+
+h1,
+.h1 {
+  font-family: 'LondonWeb-Bold', sans-serif;
+  font-size: 36px;
+
+  @include min-width-576 {
+    font-size: 44px;
+  }
+
+  @include min-width-768 {
+    font-size: 52px;
+  }
+
+  @include min-width-992 {
+    font-size: 60px;
+  }
+}
+
+h2,
+.h2 {
+  font-family: 'LondonWeb-Bold', sans-serif;
+  font-size: 30px;
+
+  @include min-width-576 {
+    font-size: 36px;
+  }
+
+  @include min-width-768 {
+    font-size: 42px;
+  }
+
+  @include min-width-992 {
+    font-size: 48px;
+  }
+}
+
+h3,
+.h3 {
+  font-family: 'LondonWeb-Medium', sans-serif;
+  font-size: 24px;
+
+  @include min-width-576 {
+    font-size: 27px;
+  }
+
+  @include min-width-768 {
+    font-size: 30px;
+  }
+
+  @include min-width-992 {
+    font-size: 34px;
+  }
+}
+
+h4,
+.h4 {
+  font-family: 'LondonWeb-Medium', sans-serif;
+  font-size: 20px;
+
+  @include min-width-576 {
+    font-size: 22px;
+  }
+
+  @include min-width-768 {
+    font-size: 24px;
+  }
+}
+
+h5,
+.h5 {
+  font-family: 'LondonWeb-Medium', sans-serif;
+  font-size: 18px;
+
+  @include min-width-768 {
+    font-size: 20px;
+  }
+}
+
+h6,
+.h6 {
+  font-family: 'LondonWeb-Medium', sans-serif;
+  font-size: 16px;
+
+  @include min-width-768 {
+    font-size: 18px;
+  }
+}
+
+body,
+.body-1 {
+  font-family: 'LondonWeb-Regular', sans-serif;
+  font-size: 14px;
+
+  @include min-width-576 {
+    font-size: 15px;
+  }
+
+  @include min-width-768 {
+    font-size: 16px;
+  }
+}
+
+.body-2 {
+  font-family: 'LondonWeb-Regular', sans-serif;
+  font-size: 12px;
+
+  @include min-width-576 {
+    font-size: 13px;
+  }
+
+  @include min-width-768 {
+    font-size: 14px;
+  }
+}
+
+.subtitle-1 {
+  font-family: 'LondonWeb-Medium', sans-serif;
+  font-size: 14px;
+
+  @include min-width-576 {
+    font-size: 15px;
+  }
+
+  @include min-width-768 {
+    font-size: 16px;
+  }
+}
+
+.subtitle-2 {
+  font-family: 'LondonWeb-Medium', sans-serif;
+  font-size: 12px;
+
+  @include min-width-576 {
+    font-size: 13px;
+  }
+
+  @include min-width-768 {
+    font-size: 14px;
+  }
+}
+
+.caption-1 {
+  font-family: 'LondonWeb-Regular', sans-serif;
+  font-size: 10px;
+
+  @include min-width-576 {
+    font-size: 11px;
+  }
+
+  @include min-width-768 {
+    font-size: 12px;
+  }
+}

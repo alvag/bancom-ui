@@ -1,0 +1,20 @@
+<label class="bc-input-outlined">
+  <span class="prefix">
+    <ng-content select="[prefix]"></ng-content>
+  </span>
+  <span class="suffix">
+    <ng-content select="[suffix]"></ng-content>
+  </span>
+  <input
+    [(ngModel)]="value"
+    (blur)="onTouch()"
+    [class.readonly]="isReadOnly"
+    (ngModelChange)="onInput()"
+    [disabled]="isDisabled || isReadOnly"
+    type="text"
+    [placeholder]="placeholder"
+  />
+  <span class="label">
+    <ng-content select="[input-label]"></ng-content>
+  </span>
+</label>

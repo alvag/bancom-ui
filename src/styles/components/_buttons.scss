@@ -1,0 +1,178 @@
+@import 'styles/breakpoints';
+
+.bc-button {
+  --bc-button-background-color: rgb(33, 150, 243);
+  --bc-button-text-color: white;
+  --bc-button-border-color: transparent;
+  --bc-button-border-size: 0px;
+  --bc-button-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: var(--bc-button-border-size) solid var(--bc-button-border-color);
+  border-radius: 7px;
+  padding: 0 16px;
+  height: 46px;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  color: var(--bc-button-text-color);
+  background-color: var(--bc-button-background-color);
+  box-shadow: var(--bc-button-box-shadow);
+  font-family: var(--font-regular, 'Roboto', 'Segoe UI', BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 16px;
+  line-height: 36px;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
+  @include min-width-576 {
+    width: auto;
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    opacity: 0;
+  }
+
+  &::before {
+    background-color: var(--bc-button-background-color);
+    transition: opacity 0.2s;
+  }
+
+  &::after {
+    background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+    transition: opacity 1s, background-size 0.5s;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    opacity: 0.9;
+  }
+
+  &:hover::before {
+    opacity: 0.08;
+  }
+
+  &:focus::before {
+    opacity: 0.24;
+  }
+
+  &:hover:focus::before {
+    opacity: 0.32;
+  }
+
+  &:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active::after {
+    opacity: 0.32;
+    background-size: 100% 100%;
+    transition: background-size 0s;
+  }
+
+  &:disabled::before,
+  &:disabled::after {
+    opacity: 0;
+  }
+
+  &:disabled {
+    --bc-button-background-color: rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    cursor: initial;
+  }
+
+  &--secondary {
+    --bc-button-background-color: var(--color-secondary);
+
+    &:disabled {
+      --bc-button-background-color: var(--color-secondary-disabled);
+    }
+  }
+}
+
+/** button primary */
+.bc-button.bc-button--primary {
+  --bc-button-background-color: var(--color-primary);
+
+  &:disabled {
+    --bc-button-background-color: var(--color-primary-disabled);
+  }
+}
+
+/** button primary outline */
+.bc-button.bc-button--primary-outline {
+  --bc-button-background-color: white;
+  --bc-button-text-color: var(--color-primary);
+  --bc-button-border-color: var(--color-primary);
+  --bc-button-border-size: 1.5px;
+  --bc-button-box-shadow: none;
+
+  &:disabled {
+    --bc-button-text-color: var(--color-primary-disabled);
+    --bc-button-border-color: var(--color-primary-disabled);
+  }
+}
+
+/** button secondary */
+.bc-button.bc-button--secondary {
+  --bc-button-background-color: var(--color-secondary);
+
+  &:disabled {
+    --bc-button-background-color: var(--color-secondary-disabled);
+  }
+}
+
+/** button secondary outline */
+.bc-button.bc-button--secondary-outline {
+  --bc-button-background-color: white;
+  --bc-button-text-color: var(--color-secondary);
+  --bc-button-border-color: var(--color-secondary);
+  --bc-button-border-size: 1.5px;
+  --bc-button-box-shadow: none;
+
+  &:disabled {
+    --bc-button-text-color: var(--color-secondary-disabled);
+    --bc-button-border-color: var(--color-secondary-disabled);
+  }
+}
+
+.bc-button {
+  &.btn-sm {
+    width: auto;
+    height: 30px;
+    line-height: 34px;
+
+    @include min-width-576 {
+      height: 36px;
+      line-height: 38px;
+    }
+  }
+
+  &.btn-md {
+    width: auto;
+    height: 36px;
+    line-height: 38px;
+
+    @include min-width-576 {
+      height: 46px;
+      line-height: 36px;
+    }
+  }
+}
