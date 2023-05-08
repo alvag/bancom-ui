@@ -1,0 +1,10 @@
+<label class="matter-switch">
+  <input
+    type="checkbox"
+    role="switch"
+    [(ngModel)]="isChecked"
+    [disabled]="disabled"
+    (ngModelChange)="onChecked($event)"
+  />
+  <span>{{ label }}</span>
+</label>

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonsPageComponent } from './buttons-page.component';
+import { BcSwitchComponent } from './bc-switch.component';
 
-describe('ButtonsPageComponent', () => {
-  let component: ButtonsPageComponent;
-  let fixture: ComponentFixture<ButtonsPageComponent>;
+describe('BcSwitchComponent', () => {
+  let component: BcSwitchComponent;
+  let fixture: ComponentFixture<BcSwitchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ButtonsPageComponent],
+      imports: [BcSwitchComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ButtonsPageComponent);
+    fixture = TestBed.createComponent(BcSwitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

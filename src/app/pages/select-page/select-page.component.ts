@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-select-page',
   templateUrl: './select-page.component.html',
-  styleUrls: ['./select-page.component.scss']
+  styleUrls: ['./select-page.component.scss'],
 })
 export class SelectPageComponent {
   items = [

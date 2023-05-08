@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-checkbox-page',
   templateUrl: './checkbox-page.component.html',
-  styleUrls: ['./checkbox-page.component.scss']
+  styleUrls: ['./checkbox-page.component.scss'],
 })
 export class CheckboxPageComponent {
   form = new FormBuilder().group({

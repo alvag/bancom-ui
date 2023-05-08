@@ -8,7 +8,6 @@
     ul li {
       margin-bottom: 15px;
 
-
       a {
         text-decoration: none;
         color: darkolivegreen;
@@ -27,4 +26,10 @@
   }
 }
 
-
+.icon-chevron-down {
+  font-size: 60px;
+  background: linear-gradient(180deg, #640ab0 0%, #fb0019 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}

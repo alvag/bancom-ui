@@ -4,6 +4,7 @@ import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.componen
 import { InputsPageComponent } from './pages/inputs-page/inputs-page.component';
 import { CheckboxPageComponent } from './pages/checkbox-page/checkbox-page.component';
 import { SelectPageComponent } from './pages/select-page/select-page.component';
+import { SwitchPageComponent } from './pages/switch-page/switch-page.component';
 
 const routes: Routes = [
   {
@@ -12,20 +13,24 @@ const routes: Routes = [
   },
   {
     path: 'inputs',
-    component: InputsPageComponent
+    component: InputsPageComponent,
   },
   {
     path: 'checkbox',
-    component: CheckboxPageComponent
+    component: CheckboxPageComponent,
   },
   {
     path: 'select',
-    component: SelectPageComponent
+    component: SelectPageComponent,
+  },
+  {
+    path: 'switch',
+    component: SwitchPageComponent,
   },
   {
     path: '**',
     redirectTo: 'buttons',
-  }
+  },
 ];
 
 @NgModule({

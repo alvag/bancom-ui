@@ -12,9 +12,18 @@ import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.componen
 import { InputsPageComponent } from './pages/inputs-page/inputs-page.component';
 import { CheckboxPageComponent } from './pages/checkbox-page/checkbox-page.component';
 import { SelectPageComponent } from './pages/select-page/select-page.component';
+import { SwitchPageComponent } from './pages/switch-page/switch-page.component';
+import { BcSwitchComponent } from './components/bc-switch/bc-switch.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonsPageComponent, InputsPageComponent, CheckboxPageComponent, SelectPageComponent],
+  declarations: [
+    AppComponent,
+    ButtonsPageComponent,
+    InputsPageComponent,
+    CheckboxPageComponent,
+    SelectPageComponent,
+    SwitchPageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +32,7 @@ import { SelectPageComponent } from './pages/select-page/select-page.component';
     ControlMessagesComponent,
     BcCheckboxComponent,
     BcSelectComponent,
+    BcSwitchComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

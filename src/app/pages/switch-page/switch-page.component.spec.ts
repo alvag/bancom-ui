@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonsPageComponent } from './buttons-page.component';
+import { SwitchPageComponent } from './switch-page.component';
 
-describe('ButtonsPageComponent', () => {
-  let component: ButtonsPageComponent;
-  let fixture: ComponentFixture<ButtonsPageComponent>;
+describe('SwitchPageComponent', () => {
+  let component: SwitchPageComponent;
+  let fixture: ComponentFixture<SwitchPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ButtonsPageComponent],
+      declarations: [SwitchPageComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ButtonsPageComponent);
+    fixture = TestBed.createComponent(SwitchPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
