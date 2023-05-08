@@ -1,11 +1,26 @@
-<!--<app-buttons></app-buttons>-->
-<!--<app-inputs></app-inputs>-->
-<!--<app-checkbox></app-checkbox>-->
+<div class='container'>
+  <div class='sidebar'>
+    <ul>
+      <li>
+        <a routerLinkActive='active' routerLink='/buttons'>Buttons</a>
+      </li>
+      <li>
+        <a routerLinkActive='active' routerLink='/inputs'>Inputs</a>
+      </li>
+      <li>
+        <a routerLinkActive='active' routerLink='/checkbox'>Checkbox</a>
+      </li>
+      <li>
+        <a routerLinkActive='active' routerLink='/select'>Select</a>
+      </li>
+    </ul>
+  </div>
 
-<div class='select'>
-
-  <bc-select></bc-select>
-
+  <div class='content'>
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
+
 
 

@@ -4,7 +4,7 @@
   --bc-input-border-color: var(--color-neutral-medium-1);
   --bc-input-border-top-color: transparent;
   --bc-input-label-color: var(--color-neutral-medium-1);
-  --bc-input-label-border-top-color: var(--color-neutral-oscuro-3);
+  --bc-input-label-border-top-color: var(--color-neutral-dark-3);
   --pointer-events: auto;
   width: 100%;
 
@@ -84,7 +84,7 @@
   transition: border 0.2s, box-shadow 0.2s;
 
   &:not(:placeholder-shown) {
-    --bc-input-border-color: var(--color-neutral-oscuro-3);
+    --bc-input-border-color: var(--color-neutral-dark-3);
   }
 }
 
@@ -113,7 +113,7 @@
 }
 
 .bc-input-outlined > input:not(:placeholder-shown) + .label {
-  --bc-input-label-color: var(--color-neutral-oscuro-3);
+  --bc-input-label-color: var(--color-neutral-dark-3);
 }
 
 /* Corners */
@@ -150,7 +150,7 @@
 }
 
 .bc-input-outlined:hover > input:not(:focus):not(:disabled):not(:read-only):placeholder-shown {
-  --bc-input-border-color: var(--color-neutral-oscuro-3);
+  --bc-input-border-color: var(--color-neutral-dark-3);
 }
 
 /* Focus */
@@ -175,10 +175,10 @@
 .bc-input-outlined > input:disabled,
 .bc-input-outlined > input:disabled + .label {
   --bc-input-background-color: var(--color-input-disabled);
-  --bc-input-color: var(--color-neutral-medio-2);
-  --bc-input-border-color: var(--color-neutral-medio-2);
-  --bc-input-label-border-top-color: var(--color-neutral-medio-2);
-  --bc-input-label-color: var(--color-neutral-medio-2);
+  --bc-input-color: var(--color-neutral-medium-2);
+  --bc-input-border-color: var(--color-neutral-medium-2);
+  --bc-input-label-border-top-color: var(--color-neutral-medium-2);
+  --bc-input-label-color: var(--color-neutral-medium-2);
   pointer-events: none;
 }
 

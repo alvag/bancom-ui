@@ -1,0 +1,42 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M779.148 1006.191l-728.516-896.755c-17.029-20.961-17.029-54.947 0-75.908s44.638-20.961 61.667 0l666.849 820.848 666.847-820.848c17.030-20.961 44.637-20.961 61.667 0s17.030 54.946 0 75.908l-728.514 896.755z"
+        ],
+        "attrs": [],
+        "width": 1558,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": ["chevron-down"],
+        "colorPermutations": {}
+      },
+      "attrs": [],
+      "properties": { "order": 2, "id": 0, "name": "chevron-down", "prevSize": 32, "code": 59648 },
+      "setIdx": 0,
+      "setId": 0,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": { "name": "icomoon" },
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": { "fontFamily": "icomoon" },
+      "metrics": { "emSize": 1024, "baseline": 6.25, "whitespace": 50 },
+      "embed": false
+    },
+    "imagePref": { "prefix": "icon-", "png": true, "useClassSelector": true, "color": 0, "bgColor": 16777215 },
+    "historySize": 50,
+    "gridSize": 16
+  }
+}

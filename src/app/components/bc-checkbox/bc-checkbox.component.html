@@ -1,7 +1,4 @@
 <label class="bc-checkbox">
-  <input type="checkbox"
-         [(ngModel)]='isChecked'
-         [disabled]='isDisabled'
-         (ngModelChange)='onChecked($event)'>
-  <span>{{label}}</span>
+  <input type="checkbox" [(ngModel)]="isChecked" [disabled]="disabled" (ngModelChange)="onChecked($event)" />
+  <span>{{ label }}</span>
 </label>
