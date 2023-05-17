@@ -5,16 +5,17 @@
   <span class="suffix">
     <ng-content select="[suffix]"></ng-content>
   </span>
-  <input
-    [(ngModel)]="value"
-    (blur)="onTouch()"
-    [class.readonly]="isReadOnly"
-    (ngModelChange)="onInput()"
-    [disabled]="disabled || isReadOnly"
-    type="text"
-    [placeholder]="placeholder"
-  />
-  <span class="label">
-    <ng-content select="[input-label]"></ng-content>
+
+  <ng-content />
+
+  <span class='borders'>
+    <span class='left-border'></span>
+    <span class='bottom-border'>
+      <span class="label">
+        <ng-content select="[label]"></ng-content>
+      </span>
+    </span>
+    <span class='top-border'></span>
+    <span class='right-border'></span>
   </span>
 </label>

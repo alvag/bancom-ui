@@ -1,16 +1,18 @@
 .bc-input-outlined {
   --bc-input-color: #000000;
+  --bc-input-border-width: 1px;
   --bc-input-background-color: #ffffff;
   --bc-input-border-color: var(--color-neutral-medium-1);
   --bc-input-border-top-color: transparent;
   --bc-input-label-color: var(--color-neutral-medium-1);
-  --bc-input-label-border-top-color: var(--color-neutral-dark-3);
   --pointer-events: auto;
-  width: 100%;
+  --bc-input-border-radius: 12px;
 
+  width: 100%;
+  height: 54px;
   position: relative;
   display: inline-block;
-  padding-top: 6px;
+  box-sizing: border-box;
   font-family: var(--font-regular, 'Roboto', 'Segoe UI', BlinkMacSystemFont, system-ui, -apple-system);
   font-size: 16px;
   line-height: 1.5;
@@ -55,22 +57,23 @@
     ~ input {
       padding-left: 30px;
 
-      &:not(:focus):placeholder-shown + .label {
-        padding-left: 18px;
+      &:not(:focus):placeholder-shown + .borders {
+        .bottom-border {
+          .label {
+            padding-left: 18px;
+          }
+        }
       }
     }
   }
 }
 
-/* Input, Textarea */
+/* Input */
 .bc-input-outlined > input {
   box-sizing: border-box;
   margin: 0;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--bc-input-border-top-color) var(--bc-input-border-color) var(--bc-input-border-color);
-  border-radius: 4px;
-  padding: 14px 11px 14px;
+  border: none;
+  padding: 14px 11px 10px;
   width: 100%;
   height: inherit;
   color: var(--bc-input-color);
@@ -80,7 +83,7 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  caret-color: var(--bc-input-border-color);
+  border-radius: var(--bc-input-border-radius);
   transition: border 0.2s, box-shadow 0.2s;
 
   &:not(:placeholder-shown) {
@@ -92,101 +95,126 @@
   --bc-input-border-top-color: var(--bc-input-border-color);
 }
 
-/* label */
-.bc-input-outlined > input + .label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  max-height: 100%;
-  color: var(--bc-input-label-color);
-  font-size: 75%;
-  line-height: 15px;
-  cursor: text;
-  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+.bc-input-outlined > input:not(:focus):placeholder-shown + .borders {
+  .bottom-border {
+    border-top: solid 1px var(--bc-input-border-color);
+    .label {
+      font-size: inherit;
+      line-height: 57px;
+    }
+  }
 }
 
-.bc-input-outlined > input:not(:focus):placeholder-shown + .label {
-  font-size: inherit;
-  line-height: 68px;
-}
-
-.bc-input-outlined > input:not(:placeholder-shown) + .label {
-  --bc-input-label-color: var(--color-neutral-dark-3);
-}
-
-/* Corners */
-.bc-input-outlined > input + .label::before,
-.bc-input-outlined > input + .label::after {
-  content: '';
-  display: block;
-  box-sizing: border-box;
-  margin-top: 6px;
-  border-top: solid 1px var(--bc-input-label-border-top-color);
-  min-width: 10px;
-  height: 8px;
-  pointer-events: none;
-  box-shadow: inset 0 1px transparent;
-  //transition: border 0.2s, box-shadow 0.2s;
-}
-
-.bc-input-outlined > input + .label::before {
-  margin-right: 4px;
-  border-left: solid 1px transparent;
-  border-radius: 4px 0;
-}
-
-.bc-input-outlined > input + .label::after {
-  flex-grow: 1;
-  margin-left: 4px;
-  border-right: solid 1px transparent;
-  border-radius: 0 4px;
-}
-
-.bc-input-outlined > input:not(:focus):placeholder-shown + .label::before,
-.bc-input-outlined > input:not(:focus):placeholder-shown + .label::after {
-  --bc-input-label-border-top-color: transparent;
-}
-
-.bc-input-outlined:hover > input:not(:focus):not(:disabled):not(:read-only):placeholder-shown {
-  --bc-input-border-color: var(--color-neutral-dark-3);
+.bc-input-outlined > input:not(:placeholder-shown) + .borders {
+  .bottom-border {
+    .label {
+      --bc-input-label-color: var(--color-neutral-dark-3);
+    }
+  }
 }
 
 /* Focus */
 .bc-input-outlined > input:focus {
-  --bc-input-border-color: var(--color-secondary);
-  box-shadow: inset 1px 0 var(--bc-input-border-color), inset -1px 0 var(--bc-input-border-color),
-    inset 0 -1px var(--bc-input-border-color);
   outline: none;
+
+  &:not(:read-only) {
+    + .borders {
+      --bc-input-border-color: var(--color-secondary);
+      --bc-input-border-width: 2px;
+    }
+  }
 }
 
-.bc-input-outlined > input:focus + .label {
-  --bc-input-label-color: var(--color-secondary);
-}
-
-.bc-input-outlined > input:focus + .label::before,
-.bc-input-outlined > input:focus + .label::after {
-  --bc-input-label-border-top-color: var(--color-secondary);
-  box-shadow: inset 0 1px var(--bc-input-label-border-top-color);
+.bc-input-outlined > input:focus + .borders {
+  .bottom-border {
+    .label {
+      --bc-input-label-color: var(--color-secondary);
+    }
+  }
 }
 
 /* Disabled */
 .bc-input-outlined > input:disabled,
-.bc-input-outlined > input:disabled + .label {
+.bc-input-outlined > input:disabled + .borders {
+  --bc-input-color: var(--color-neutral-medium-1);
   --bc-input-background-color: var(--color-input-disabled);
-  --bc-input-color: var(--color-neutral-medium-2);
   --bc-input-border-color: var(--color-neutral-medium-2);
-  --bc-input-label-border-top-color: var(--color-neutral-medium-2);
-  --bc-input-label-color: var(--color-neutral-medium-2);
-  pointer-events: none;
+
+  .bottom-border {
+    .label {
+      --bc-input-label-color: var(--color-neutral-medium-2);
+      pointer-events: none;
+    }
+  }
 }
 
 /** readonly */
-.bc-input-outlined > input.readonly,
-.bc-input-outlined > input.readonly + .label {
-  --bc-input-background-color: white;
-  --bc-input-border-color: var(--color-neutral-medium-1);
-  --bc-input-label-color: var(--color-neutral-medium-1);
+.bc-input-outlined > input:read-only,
+.bc-input-outlined > input:read-only + .borders {
   --bc-input-color: var(--color-neutral-medium-1);
+
+  .bottom-border {
+    .label {
+      --bc-input-border-color: var(--color-neutral-medium-1);
+      --bc-input-label-color: var(--color-neutral-medium-1);
+    }
+  }
+}
+
+/*** borders ***/
+.borders {
+  right: 0;
+  top: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  .left-border,
+  .right-border,
+  .bottom-border,
+  .top-border {
+    box-sizing: border-box;
+    height: inherit;
+  }
+
+  .left-border {
+    width: 10px;
+    border: solid var(--bc-input-border-width) var(--bc-input-border-color);
+    border-right: none;
+    border-top-left-radius: var(--bc-input-border-radius);
+    border-bottom-left-radius: var(--bc-input-border-radius);
+  }
+
+  .right-border {
+    width: 20px;
+    border: solid var(--bc-input-border-width) var(--bc-input-border-color);
+    border-left: none;
+    border-top-right-radius: var(--bc-input-border-radius);
+    border-bottom-right-radius: var(--bc-input-border-radius);
+  }
+
+  .bottom-border {
+    padding-left: 3px;
+    padding-right: 3px;
+    border: none;
+    border-bottom: solid var(--bc-input-border-width) var(--bc-input-border-color);
+
+    .label {
+      display: flex;
+      color: var(--bc-input-label-color);
+      font-size: 75%;
+      line-height: 2px;
+      cursor: text;
+      transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+    }
+  }
+
+  .top-border {
+    display: block;
+    flex-grow: 1;
+    border: solid var(--bc-input-border-width) var(--bc-input-border-color);
+    border-left: none;
+    border-right: none;
+  }
 }

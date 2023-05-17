@@ -1,40 +1,24 @@
 <div class="items" [formGroup]="form">
-  <bc-control-messages [control]="form.get('input1')">
-    <bc-input formControlName="input1">
-      <span input-label>Textfield</span>
+<!--  <bc-control-messages [control]="form.get('input1')">-->
+    <bc-input>
+      <input type='text' formControlName="input1" placeholder=' '>
+      <span label>Textfield</span>
     </bc-input>
-  </bc-control-messages>
+<!--  </bc-control-messages>-->
 
-  <bc-input formControlName="input4" [isReadOnly]="true">
-    <span input-label>Textfield</span>
+  <bc-input>
+    <input type='text' formControlName="input2" placeholder=' '>
+    <span label>Textfield</span>
     <span suffix (click)="onClickSuffix()">%</span>
   </bc-input>
 
-  <bc-input formControlName="input2" placeholder="Placeholder" [isReadOnly]="true">
+  <bc-input>
     <span prefix>@</span>
-    <span input-label>Textfield</span>
+    <input type='text' formControlName="input3" placeholder='Placeholder'>
+    <span label>Textfield</span>
     <span suffix (click)="onClickSuffix()">%</span>
   </bc-input>
 
-  <bc-input formControlName="input3">
-    <span input-label>Textfield</span>
-  </bc-input>
-
-  <bc-input formControlName="input1">
-    <span prefix>@</span>
-    <span input-label>Textfield</span>
-  </bc-input>
-
-  <bc-input formControlName="input1">
-    <span input-label>Textfield</span>
-    <span suffix>$</span>
-  </bc-input>
-
-  <bc-input formControlName="input1">
-    <span prefix>@</span>
-    <span input-label>Textfield</span>
-    <span suffix>%</span>
-  </bc-input>
 </div>
 
 <br />

@@ -18,6 +18,7 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
 })
 export class BcCheckboxComponent implements ControlValueAccessor {
   @Input() label = ' ';
+  @Input() color: 'primary' | 'default' = 'default';
   isChecked = false;
   disabled = false;
 

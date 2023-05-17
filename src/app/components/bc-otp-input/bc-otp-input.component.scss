@@ -1,0 +1,22 @@
+.bc-opt-input {
+  --bc-otp-input-border-color: var(--color-raisin-black);
+  --bc-otp-input-background-color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    width: 25px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'LondonWeb-Regular', sans-serif;
+    border: none;
+    border-bottom: solid 1px var(--bc-otp-input-border-color);
+    background: var(--bc-otp-input-background-color);
+
+      outline: none;
+    &:focus-visible {
+    }
+  }
+}

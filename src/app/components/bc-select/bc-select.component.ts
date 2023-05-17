@@ -23,7 +23,7 @@ export class BcSelectComponent implements ControlValueAccessor {
   @Input() selectedValue?: any;
   @Input() placeholder: string = '';
   @Input() disabled: boolean = false;
-  inputName = this.generateRandomName();
+  inputName = Math.random().toString(36).substring(7);
 
   onChange = (_: any) => {};
   onTouch = () => {};
@@ -42,12 +42,6 @@ export class BcSelectComponent implements ControlValueAccessor {
 
   writeValue(value: any): void {
     this.selectedValue = value;
-  }
-
-  private generateRandomName() {
-    const a = Math.random().toString(36).substring(7);
-    console.log(a);
-    return a;
   }
 
   onSelect(item: any) {

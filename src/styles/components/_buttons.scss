@@ -6,7 +6,7 @@
   --bc-button-border-color: transparent;
   --bc-button-border-size: 0px;
   --bc-button-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -21,7 +21,14 @@
   color: var(--bc-button-text-color);
   background-color: var(--bc-button-background-color);
   box-shadow: var(--bc-button-box-shadow);
-  font-family: var(--font-regular, 'Roboto', 'Segoe UI', BlinkMacSystemFont, system-ui, -apple-system);
+  font-family: var(
+      --font-regular,
+      'Roboto',
+      'Segoe UI',
+      BlinkMacSystemFont,
+      system-ui,
+      -apple-system
+  );
   font-size: 16px;
   line-height: 36px;
   outline: none;
@@ -54,13 +61,15 @@
   }
 
   &::after {
-    background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+    background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000%
+    10000% no-repeat;
     transition: opacity 1s, background-size 0.5s;
   }
 
   &:hover,
   &:focus {
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
     opacity: 0.9;
   }
 
@@ -96,6 +105,21 @@
     --bc-button-background-color: rgba(0, 0, 0, 0.12);
     box-shadow: none;
     cursor: initial;
+  }
+}
+
+/** button link */
+.bc-button.bc-button--link {
+  width: auto;
+  padding: 0;
+  height: auto;
+  --bc-button-background-color: transparent;
+  --bc-button-text-color: var(--color-raisin-black);
+  --bc-button-box-shadow: none;
+
+  &:is(:focus, :hover) {
+    --bc-button-text-color: var(--color-raisin-black);
+    box-shadow: none;
   }
 }
 

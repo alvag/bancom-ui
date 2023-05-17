@@ -1,0 +1,22 @@
+<div class='slider-container'>
+  <div class='prev' *ngIf='swiperEl'
+       (click)='prevSlide()'
+       [class.is-disabled]='swiperEl.swiper.isBeginning'>
+    <ng-content select='[prev]'/>
+  </div>
+
+  <swiper-container [id]='sliderId' init='false'>
+    <ng-content/>
+  </swiper-container>
+
+  <div class='next'
+       *ngIf='swiperEl'
+        (click)='nextSlide()'
+       [class.is-disabled]='swiperEl.swiper.isEnd'>
+    <ng-content select='[next]'/>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,40 @@
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.25s ease;
+
+  &.shown {
+    opacity: 1;
+    visibility: visible;
+
+    .modal__inner {
+      top: 0;
+    }
+  }
+}
+
+.modal__inner {
+  box-sizing: border-box;
+  transition: top 0.25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  max-width: 90%;
+  margin: auto;
+  overflow: auto;
+  background: var(--color-modal-background);
+  border-radius: 12px;
+  padding: 1em 2em;
+  height: fit-content;
+  max-height: 90%;
+}

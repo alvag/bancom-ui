@@ -1,0 +1,147 @@
+.bc-checkbox {
+  --bc-checkbox-color: #000000;
+  --bc-checkbox-border-color: var(--color-secondary);
+  --bc-checkbox-background-color: var(--color-secondary);
+
+  &.primary {
+    --bc-checkbox-border-color: var(--color-primary);
+    --bc-checkbox-background-color: var(--color-primary);
+  }
+
+  z-index: 0;
+  position: relative;
+  display: inline-block;
+  color: var(--bc-checkbox-color);
+  font-family: var(--font-regular, 'Roboto', 'Segoe UI', BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Box */
+.bc-checkbox > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  margin: 3px 1px;
+  border: solid 2px; /* Safari */
+  border-color: var(--bc-checkbox-border-color);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Span */
+.bc-checkbox > input + span {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: inherit;
+  cursor: pointer;
+}
+
+/* Highlight */
+.bc-checkbox > input + span::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--bc-checkbox-background-color);
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Check Mark */
+.bc-checkbox > input + span::after {
+  content: '';
+  z-index: 1;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  box-sizing: content-box;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right-width: 0;
+  border-top-width: 0;
+  pointer-events: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+  transition: border-color 0.2s;
+}
+
+/* Checked */
+.bc-checkbox > input:checked {
+  border-color: var(--bc-checkbox-border-color);
+  background-color: var(--bc-checkbox-background-color);
+}
+
+.bc-checkbox > input:checked + span::before {
+  background-color: var(--bc-checkbox-background-color);
+}
+
+.bc-checkbox > input:checked + span::after {
+  border-color: white;
+}
+
+/* Hover, Focus */
+.bc-checkbox:hover > input + span::before {
+  opacity: 0.04;
+}
+
+.bc-checkbox > input:focus + span::before {
+  opacity: 0.12;
+}
+
+.bc-checkbox:hover > input:focus + span::before {
+  opacity: 0.16;
+}
+
+/* Active */
+.bc-checkbox:active > input,
+.bc-checkbox:active:hover > input {
+  border-color: var(--bc-checkbox-border-color);
+}
+
+.bc-checkbox:active > input:checked {
+  border-color: transparent;
+  background-color: var(--bc-checkbox-background-color);
+}
+
+.bc-checkbox:active > input + span::before {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+
+/* Disabled */
+.bc-checkbox > input:disabled {
+  --bc-checkbox-border-color: var(--color-neutral-medium-2);
+  cursor: initial;
+}
+
+.bc-checkbox > input:checked:disabled {
+  background-color: var(--color-neutral-medium-2);
+}
+
+.bc-checkbox > input:disabled + span {
+  color: var(--color-neutral-medium-2);
+  cursor: initial;
+}
+
+.bc-checkbox > input:disabled + span::before {
+  opacity: 0;
+  transform: scale(0);
+}

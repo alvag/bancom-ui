@@ -13,20 +13,14 @@
 :host ::ng-deep .has-error {
   .bc-input-outlined {
     --bc-input-border-color: var(--color-error);
-
-    &:hover > input:not(:focus):not(:disabled):not(:read-only):placeholder-shown {
-      --bc-input-border-color: var(--color-error);
-    }
+    --bc-input-label-color: var(--color-error);
 
     > input:focus {
-      --bc-input-border-color: var(--color-error);
+      + .borders {
+        --bc-input-border-color: var(--color-error);
 
-      + .label {
-        --bc-input-label-color: var(--color-error);
-
-        &::before,
-        &::after {
-          --bc-input-label-border-top-color: var(--color-error);
+        .label {
+          --bc-input-label-color: var(--color-error);
         }
       }
     }

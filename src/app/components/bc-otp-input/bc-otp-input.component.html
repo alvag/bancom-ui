@@ -1,0 +1,8 @@
+<div class='bc-opt-input'>
+  <ng-container *ngFor='let input of inputs; index as i'>
+    <input type='text' [formControl]='input'
+           id='otp-input-{{i}}'
+           maxlength='1'
+           appAlphaNumeric alphaNumericType='n' (input)='nextInput(i)' (keyup)='onBack($event, i)'>
+  </ng-container>
+</div>
